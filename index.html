@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>2-dars</title>
+	<style type="text/tailwindcss">
+    	@layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    	}
+  	</style>
+	
+</head>
+<body>
+	<header class=" flex py-5 shadow-lg bg-white px-5 items-center justify-between">
+		<div class="flex items-center gap-5">
+			<img src="./images/world.svg" alt="World icon" width="50" height="50">
+			<h1 class="text-[36px] leading-6">Countries List</h1>
+		</div>
+		
+		<div class="flex items-centter gap-5">
+			<button class="flex bg-slate-200 items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
+				<span>0</span> 
+				<img src="./images/red-heart.svg" alt="like img" width="50%">
+			</button>
+			<button class="flex items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
+				<span>0</span> 
+				<img src="./images/yellow-save.svg" alt="like img" width="50%">
+			</button>
+			<button class="flex items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
+				<img src="./images/mode.svg" alt="like img" width="50%">
+			</button>
+		</div>
+	</header>
+
+	<main>
+		<section class="mx-auto px-[20px] mt-[40px]">
+			<div class="mb-[60px] flex  gap-[100px] items-start">
+				<img src="./images/world.jpg" alt="World Map" width="550" height="400" >
+				<div class="flex items-start gap-[30px] pt-[120px]">
+					<input class="input-search w-[500px] rounded-[10px] border-[1px] border-black py-3 px-2" type="text" placeholder="Searching ...">
+					<select class="select-name w-[200px] rounded-[10px] border-[1px] border-black py-3 px-2" name="" id="">
+						<option value="">ALL</option>
+					</select>
+				</div>
+			</div>
+			<ul class="list flex justify-start items-center mx-auto flex-wrap gap-[26px]">
+				
+			</ul>
+		</section>
+	</main>
+
+	
+
+	<script src="./js/main.js"></script>
+	  <script src="https://cdn.tailwindcss.com"></script>
+	   <script>
+    		tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    		}
+  		</script>
+
+
+</body>
+</html>
