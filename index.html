@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>2-dars</title>
+	<title>Countries</title>
 	<style type="text/tailwindcss">
     	@layer utilities {
       .content-auto {
@@ -11,44 +11,45 @@
       }
     	}
   	</style>
-	
+	<link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 	<header class=" flex py-5 shadow-lg bg-white px-5 items-center justify-between">
 		<div class="flex items-center gap-5">
-			<img src="./images/world.svg" alt="World icon" width="50" height="50">
-			<h1 class="text-[36px] leading-6">Countries List</h1>
+			<h1 class="font-bold text-[36px] leading-6"><span class="text-yellow-400">Countries</span> List</h1>
 		</div>
 		
 		<div class="flex items-centter gap-5">
-			<button class="flex bg-slate-200 items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
+			<button class="flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400  ">
 				<span>0</span> 
 				<img src="./images/red-heart.svg" alt="like img" width="50%">
 			</button>
-			<button class="flex items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
+			<button class="flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400 ">
 				<span>0</span> 
 				<img src="./images/yellow-save.svg" alt="like img" width="50%">
 			</button>
-			<button class="flex items-center justify-center gap-1 w-[50px] h-[50px] rounded-[50%] border-[1px] border-black ">
-				<img src="./images/mode.svg" alt="like img" width="50%">
+			<button id="mode-dark" class="hover:bg-transparent duration-[0.4s] flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[1px] border-slate-400 bg-slate-400 ">
+				<img src="./images/mode.svg" alt="like img" width="70%">
+			</button>
+			<button id="mode-light" class="hover:opacity-70 duration-[0.4s] flex hidden items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400 ">
+				<svg class="w-[70%] h-[70%]" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#a)" fill="#ffffff"> <path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1ZM4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414L4.93 3.515ZM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H1ZM18 12a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1ZM17.657 16.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414l-2.828-2.828ZM7.757 17.657a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414l2.828-2.828ZM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414l2.828-2.828ZM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0v-4ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"></path> </g> <defs> <clipPath id="a"> <path fill="white" d="M0 0h24v24H0z"></path> </clipPath> </defs> </g></svg>
 			</button>
 		</div>
 	</header>
 
 	<main>
-		<section class="mx-auto px-[20px] mt-[40px]">
-			<div class="mb-[60px] flex  gap-[100px] items-start">
-				<img src="./images/world.jpg" alt="World Map" width="550" height="400" >
-				<div class="flex items-start gap-[30px] pt-[120px]">
-					<input class="input-search w-[500px] rounded-[10px] border-[1px] border-black py-3 px-2" type="text" placeholder="Searching ...">
-					<select class="select-name w-[200px] rounded-[10px] border-[1px] border-black py-3 px-2" name="" id="">
-						<option value="">ALL</option>
-					</select>
+		<section class="mx-auto px-[20px] pb-[50px] mt-[120px]">
+			<div class="container w-[1200px]  px-[20px] mx-auto">
+				<div class="mb-[80px] flex  justify-center gap-5 items-center">
+						<input class="input-search max-w-[450px] w-[100%] rounded-[10px] border-[1px] border-black py-3 px-2" type="text" placeholder="Searching ...">
+						<select class="select-name outline-none border-none lg:w-[150px] md:w-[100px] rounded-[10px] border-[1px] border-black py-3 px-2" name="" id="">
+							<option value="all">ALL</option>
+						</select>
 				</div>
+				<ul class="list mx-auto flex xl:justify-start md:justify-center mx-auto flex-wrap gap-[55px]">
+					
+				</ul>
 			</div>
-			<ul class="list flex justify-start items-center mx-auto flex-wrap gap-[26px]">
-				
-			</ul>
 		</section>
 	</main>
 

@@ -1,0 +1,51 @@
+:root{
+    --dark_bg:white;
+    --color-text:black;
+    --nav-bg:white;
+    --item-dark:rgb(203 213 225);
+    --item-content:rgb(241 245 249);
+    --input-gb:white;
+}
+.dark_mode{ 
+    --dark_bg:rgb(17, 7, 27);
+    --color-text:white;
+    --nav-bg:rgb(31, 24, 41);
+    --item-dark:rgb(27, 32, 73);
+    --item-content:rgb(7, 3, 83);
+    --input-gb:rgb(34, 34, 44);
+}
+.dark{
+    display: none;
+}
+.light{
+    display: block;
+}
+header{
+    background-color: var(--nav-bg) !important;
+}
+body{
+    background-color:var(--dark_bg) ;
+}
+
+h1,p,span, #close{
+    color:var(--color-text) ;
+}
+.input-search{
+    background-color: var(--input-gb);
+    color: var(--color-text);
+    border: none;
+    outline: none;
+    box-shadow: 0 0px 50px -12px rgb(0 0 0 / 0.4);
+}
+.select-name{
+    background-color: var(--input-gb);
+    color: var(--color-text);
+
+    box-shadow: 0 0px 50px -12px rgb(0 0 0 / 0.4);
+}
+.dark-item, .dark-modal{
+    background-color: var(--item-dark) !important;
+}
+.item-content, .dark-content{
+    background-color: var(--item-content) !important;
+}
