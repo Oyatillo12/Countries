@@ -155,47 +155,57 @@ function selectName(countrys){
 }
 selectName(countrys)
 
-      elSelect.addEventListener("click", function(){
-            let selected = elSelect.value
-            if(selected === "all"){
-                renderUsers(countrys);
-            }
-            else{
-                let found = countrys.find(item => item.name == selected)
-            renderUsers([found]);
-            }
+ elSelect.addEventListener("click", function(){
+    let selected = elSelect.value
+    if(selected === "all"){
+        renderUsers(countrys);
+    }
+     else{
+        let found = countrys.find(item => item.name == selected)
+    renderUsers([found]);
+    }
+})
+
+
+
+
+
+
+
+function toggleModal(modal, show) {
+    if (modal) {
+        modal.style.display = show ? "flex" : "none";
+        document.body.style.overflow = show ? "hidden" : ""; // Body scrollni boshqarish
+    }
+}
+
+
+function attachListeners(){
+    let readMore = document.querySelectorAll("#read-more");
+
+    readMore.forEach(item => {
+        item.addEventListener("click", function() {
+            let parent = item.closest("li") 
+            let modal = parent ? parent.querySelector("#modal-outer") : null;
+            toggleModal(modal, true)
+        });
+    });
+
+    let elClose = document.querySelectorAll("#close")
+
+    elClose.forEach(item => {
+        item.addEventListener("click", function(){
+            let modal = item.closest("#modal-outer")
+            toggleModal(modal, false)
         })
-
-
-
-
-
-
-let readMore = document.querySelectorAll("#read-more")
-
-readMore.forEach(item => {
-    item.addEventListener("click", function(){
-        let parent = item.closest("li")
-        console.log(parent);
-
-        let modal = parent.querySelector("#modal-outer")
-
-        modal.style.display = "flex"
-        document.body.style.overflow = "hidden";
     })
-})
-
-
-
-let elClose = document.querySelectorAll("#close")
-
-elClose.forEach(item => {
-    item.addEventListener("click", function(){
-        let modal = item.closest("#modal-outer")
-        document.body.style.overflow = "inherit";
-        modal.style.display = "none"
-    })
-})
+}
+function observeDomChanges() {
+    const observer = new MutationObserver(attachListeners);
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+observeDomChanges() 
+attachListeners()
 
 let body = document.querySelector("body")
 let elModeDark = document.querySelector("#mode-dark")
