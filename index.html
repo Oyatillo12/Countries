@@ -7,7 +7,7 @@
 	<style type="text/tailwindcss">
     	@layer utilities {
       .content-auto {
-        content-visibility: auto;
+        content-visibility: auto;  
       }
     	}
   	</style>
@@ -20,12 +20,12 @@
 		</div>
 		
 		<div class="flex items-centter gap-5">
-			<button class="flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400  ">
-				<span>0</span> 
+			<button onclick="countedLikesBtn()" class="hover:bg-slate-400 duration-300 flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400  ">
+				<span class="like-count">0</span> 
 				<img src="./images/red-heart.svg" alt="like img" width="50%">
 			</button>
-			<button class="flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400 ">
-				<span>0</span> 
+			<button onclick="countedSavesBtn()" class="hover:bg-slate-400 duration-300 flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[2px] border-slate-400 ">
+				<span class="save-count">0</span> 
 				<img src="./images/yellow-save.svg" alt="like img" width="50%">
 			</button>
 			<button id="mode-dark" class="hover:bg-transparent duration-[0.4s] flex items-center justify-center gap-1 w-[60px] h-[60px] rounded-[50%] border-[1px] border-slate-400 bg-slate-400 ">
@@ -38,9 +38,9 @@
 	</header>
 
 	<main>
-		<section class="mx-auto px-[20px] pb-[50px] mt-[120px]">
+		<section class="mx-auto px-[20px] pb-[50px] mt-[80px]">
 			<div class="container w-[1200px]  px-[20px] mx-auto">
-				<div class="mb-[80px] flex  justify-center gap-5 items-center">
+				<div class="search-part mb-[60px] flex  justify-center gap-5 items-center">
 						<input class="input-search max-w-[450px] w-[100%] rounded-[10px] border-[1px] border-black py-3 px-2" type="text" placeholder="Searching ...">
 						<select class="select-name outline-none border-none lg:w-[150px] md:w-[100px] rounded-[10px] border-[1px] border-black py-3 px-2" name="" id="">
 							<option value="all">ALL</option>
@@ -52,8 +52,15 @@
 			</div>
 		</section>
 	</main>
+	<div id="modal-outer" class="hidden fixed flex items-center justify-center backdrop-blur inset-0">
+		<div  class="dark-modal w-[46%] rounded-[30px] p-3 bg-white shadow-xl">
+            <button onclick="closebtn()" class="close ml-[92%] py-[4px]" >               
+                <svg class="w-[45px] h-[45px]" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </button>
+			<div id="modal-inner"></div>
+		</div>
+	</div>
 
-	
 
 	<script src="./js/main.js"></script>
 	  <script src="https://cdn.tailwindcss.com"></script>

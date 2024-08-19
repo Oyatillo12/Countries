@@ -30,7 +30,7 @@ body{
     background-color:var(--dark_bg) ;
 }
 
-h1,p,span, #close{
+h1,p,span, .close{
     color:var(--color-text) ;
 }
 .input-search{
