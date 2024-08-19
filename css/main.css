@@ -8,7 +8,7 @@
 }
 .dark_mode{ 
     --dark_bg:rgb(17, 7, 27);
-    --color-text:white;
+    --color-text:rgb(203 213 225);
     --nav-bg:rgb(31, 24, 41);
     --item-dark:rgb(27, 32, 73);
     --item-content:rgb(7, 3, 83);
@@ -20,7 +20,10 @@
 .light{
     display: block;
 }
-header{
+.title-span{
+    color: var(--nav-bg);
+}
+header {
     background-color: var(--nav-bg) !important;
 }
 body{

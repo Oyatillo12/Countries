@@ -168,14 +168,10 @@ selectName(countrys)
 
 
 
-
-
-
-
 function toggleModal(modal, show) {
     if (modal) {
         modal.style.display = show ? "flex" : "none";
-        document.body.style.overflow = show ? "hidden" : ""; // Body scrollni boshqarish
+        document.body.style.overflow = show ? "hidden" : "";
     }
 }
 
@@ -187,6 +183,13 @@ function attachListeners(){
         item.addEventListener("click", function() {
             let parent = item.closest("li") 
             let modal = parent ? parent.querySelector("#modal-outer") : null;
+            
+            modal.addEventListener("click", function(evt){
+                if(evt.target.id == "modal-outer"){
+                modal.style.display = "none"
+                document.body.style.overflow = "auto"
+            }
+            })
             toggleModal(modal, true)
         });
     });
@@ -200,12 +203,22 @@ function attachListeners(){
         })
     })
 }
+
 function observeDomChanges() {
     const observer = new MutationObserver(attachListeners);
     observer.observe(document.body, { childList: true, subtree: true });
 }
 observeDomChanges() 
 attachListeners()
+
+// let modalOuter = document.querySelectorALL("#modal-outer")
+   
+//         modalOuter.addEventListener("click", function(){
+//             modalOuter.style.display = "none"
+//             document.body.style.overflow = "auto"
+//         })
+
+
 
 let body = document.querySelector("body")
 let elModeDark = document.querySelector("#mode-dark")
